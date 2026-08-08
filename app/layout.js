@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import AIConsultant from "../components/AIConsultant";
 
 // Working name only — final brand pending (docs/volume-1-business-requirements.md §1.1)
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <AIConsultant />
       </body>
     </html>
   );
