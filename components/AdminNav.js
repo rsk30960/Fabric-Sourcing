@@ -6,6 +6,7 @@ import { supabase } from "../lib/supabaseClient";
 
 const LINKS = [
   { href: "/admin/leads", label: "Leads" },
+  { href: "/admin/tasks", label: "Tasks" },
   { href: "/admin/products", label: "Products" },
 ];
 

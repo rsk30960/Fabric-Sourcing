@@ -6,8 +6,10 @@
 // (fabric/trims/artwork/measurements/styling/reference images) where applicable.
 
 import { useEffect, useState } from "react";
-import { ClipboardList, ChevronDown, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ClipboardList, ChevronDown, ChevronRight, ExternalLink } from "lucide-react";
 import { supabase } from "../lib/supabaseClient";
+import SpecificationDetail from "./SpecificationDetail";
 
 export const STATUSES = [
   { value: "New", bg: "bg-status-infoBg", text: "text-status-info" },
@@ -50,80 +52,6 @@ function StatusPill({ lead, isEditing, onStartEdit, onChangeStatus, onCancelEdit
     >
       {lead.status}
     </button>
-  );
-}
-
-function SpecificationDetail({ leadId }) {
-  const [loading, setLoading] = useState(true);
-  const [items, setItems] = useState([]);
-  const [imageUrls, setImageUrls] = useState({});
-
-  useEffect(() => {
-    let cancelled = false;
-    async function load() {
-      const { data: specRequest } = await supabase
-        .from("specification_requests")
-        .select("id")
-        .eq("lead_id", leadId)
-        .maybeSingle();
-
-      if (!specRequest) {
-        if (!cancelled) setLoading(false);
-        return;
-      }
-
-      const { data: lineItems } = await supabase
-        .from("specification_request_line_items")
-        .select("*")
-        .eq("specification_request_id", specRequest.id);
-
-      if (cancelled) return;
-      setItems(lineItems || []);
-
-      // Reference images live in a private bucket — need signed URLs to view them.
-      const urls = {};
-      for (const item of lineItems || []) {
-        for (const path of item.reference_images || []) {
-          const { data } = await supabase.storage.from("reference-images").createSignedUrl(path, 3600);
-          if (data?.signedUrl) urls[path] = data.signedUrl;
-        }
-      }
-      if (!cancelled) {
-        setImageUrls(urls);
-        setLoading(false);
-      }
-    }
-    load();
-    return () => { cancelled = true; };
-  }, [leadId]);
-
-  if (loading) return <p className="text-xs text-ink-secondary py-3">Loading specification…</p>;
-  if (items.length === 0) return null;
-
-  return (
-    <div className="space-y-3 py-3">
-      <p className="text-xs font-medium text-ink-secondary">Specification line items</p>
-      {items.map((item, idx) => (
-        <div key={item.id} className="bg-surface-page rounded-sm p-3 text-xs space-y-1">
-          <p className="font-medium text-graphite">Item {idx + 1}</p>
-          <p><span className="text-ink-secondary">Fabric:</span> {item.fabric}</p>
-          {item.trims && <p><span className="text-ink-secondary">Trims:</span> {item.trims}</p>}
-          {item.artwork && <p><span className="text-ink-secondary">Artwork:</span> {item.artwork}</p>}
-          <p><span className="text-ink-secondary">Measurements:</span> {item.measurements}</p>
-          {item.styling && <p><span className="text-ink-secondary">Styling:</span> {item.styling}</p>}
-          <p><span className="text-ink-secondary">Quantity:</span> {item.quantity}</p>
-          {item.reference_images?.length > 0 && (
-            <div className="flex gap-2 flex-wrap pt-1">
-              {item.reference_images.map((path) => (
-                <a key={path} href={imageUrls[path]} target="_blank" rel="noopener noreferrer" className="text-clay hover:underline">
-                  Reference image
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
   );
 }
 
@@ -252,6 +180,12 @@ export default function AdminLeadsTable() {
                       <p className="text-xs whitespace-pre-wrap bg-surface-page rounded-sm p-3 mb-2">{lead.message}</p>
                     )}
                     {lead.source === "Specification Request" && <SpecificationDetail leadId={lead.id} />}
+                    <Link
+                      href={`/admin/leads/${lead.id}`}
+                      className="inline-flex items-center gap-1 text-xs text-clay font-medium hover:underline mt-2"
+                    >
+                      Open full detail <ExternalLink size={12} />
+                    </Link>
                   </div>
                 )}
               </div>
