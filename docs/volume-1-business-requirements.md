@@ -139,8 +139,13 @@ Journey mapping (still open):
 - [x] Blog / Knowledge Centre
 - [x] Lead capture + admin lead management
 - [x] Quotation request workflow
-- [ ] E-commerce checkout — **deferred**, future phase
-- [ ] Customer portal — **deferred**, future phase
+- [ ] E-commerce checkout / order & invoice management — **status changed (2026):** originally
+  "deferred, future phase." **Superseded by `docs/platform-vision-v2.md`** — order/invoice
+  management via a Customer Portal and Supplier Portal is now confirmed as real target scope, not
+  permanently out of bounds. Still not part of the *current* build slice (current priority: digital
+  tools/calculators) — this note exists so the current site's lead-gen-only design isn't mistaken
+  for a permanent architectural decision.
+- [ ] Customer portal — same status change as above, see `docs/platform-vision-v2.md`
 - [ ] Multi-language support? [TBD — export scope (§1.6 market decision) makes this worth revisiting;
   at minimum, confirm whether English-only is acceptable for target export markets]
 

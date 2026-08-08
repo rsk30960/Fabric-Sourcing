@@ -28,6 +28,7 @@ export default function Footer() {
           <ul className="space-y-2 text-white/60">
             <li><Link href="/services/consulting">Textile Consulting</Link></li>
             <li><Link href="/services/sourcing">Sourcing</Link></li>
+            <li><Link href="/tools">Digital Tools</Link></li>
             <li><Link href="/blog">Blog / Knowledge Centre</Link></li>
             <li><Link href="/careers">Careers</Link></li>
           </ul>

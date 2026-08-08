@@ -1,9 +1,11 @@
-# Project IronShield (working name — brand TBD)
+# Project IronShield / Fabric Sourcing (working name — brand TBD)
 
-**Premium B2B digital platform for a unified Textile, Apparel, Uniform, Workwear, Sourcing & Consulting company.**
-
-This repo is currently **documentation-only**. It holds the Software Requirements Specification (SRS) that will
-become the blueprint for design, development, and QA once the codebase is scaffolded (separate decision, not yet made).
+**A textile/apparel B2B sourcing and manufacturing business, building toward an AI-powered digital
+business platform.** See [docs/platform-vision-v2.md](docs/platform-vision-v2.md) for the long-term
+target architecture (CRM, Customer/Supplier Portals, AI Consultant, Textile Academy, BI) — that's
+the destination, phased in over time. The 10-volume SRS below plus this repo's actual Next.js +
+Supabase codebase is the current, real state: a working lead-generation site with an admin portal
+for managing leads and products. Live at https://github.com/rsk30960/Fabric-Sourcing.
 
 ## Status
 
