@@ -34,6 +34,15 @@ export default function SourcingPage() {
 
       <div className="grid md:grid-cols-3 gap-8 mb-16">
         <div>
+          <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+            <Image
+              src="/images/marketing/12-relationship-not-transaction.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </div>
           <Handshake className="text-clay mb-3" size={28} />
           <h3 className="font-semibold text-graphite mb-2">A relationship, not a transaction</h3>
           <p className="text-sm text-ink-secondary">
@@ -59,6 +68,15 @@ export default function SourcingPage() {
           </p>
         </div>
         <div>
+          <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+            <Image
+              src="/images/marketing/13-samples-before-you-commit.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </div>
           <ShieldCheck className="text-clay mb-3" size={28} />
           <h3 className="font-semibold text-graphite mb-2">Samples before you commit</h3>
           <p className="text-sm text-ink-secondary">

@@ -1,22 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { supabaseServerSelect } from "../../lib/supabaseServer";
-import DivisionArt from "../../components/DivisionArt";
+import { ACADEMY_CATEGORY_IMAGES } from "../../lib/academyImages";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Textile Academy | Vexora Global",
   description: "Free textile and apparel education — fibres to finishing, manufacturing, workwear compliance, sourcing, and business fundamentals.",
-};
-
-const CATEGORY_ICONS = {
-  "textile-basics": "layers",
-  "apparel-manufacturing": "shirt",
-  "workwear-academy": "hardHat",
-  "school-uniform-academy": "graduationCap",
-  "global-sourcing": "handshake",
-  "textile-business": "briefcase",
-  "ai-academy": "lightbulb",
 };
 
 async function getCategories() {
@@ -38,6 +29,17 @@ export default async function AcademyIndexPage() {
 
   return (
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
+      <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-12">
+        <Image
+          src="/images/marketing/23-academy-index.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
       <div className="max-w-2xl mb-12">
         <h1 className="text-3xl font-semibold text-graphite mb-3">Textile Academy</h1>
         <p className="text-ink-secondary">
@@ -59,7 +61,15 @@ export default async function AcademyIndexPage() {
               href={`/academy/${c.slug}`}
               className="group block bg-surface-card border border-border rounded-md overflow-hidden hover:border-clay hover:shadow-md transition-all"
             >
-              <DivisionArt icon={CATEGORY_ICONS[c.slug]} size="sm" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={ACADEMY_CATEGORY_IMAGES[c.slug]}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
               <div className="p-5">
                 <h3 className="font-semibold text-graphite mb-1">{c.name}</h3>
                 <p className="text-sm text-ink-secondary mb-2">{c.description}</p>

@@ -13,7 +13,7 @@ export default function ToolsIndexPage() {
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
       <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-12">
         <Image
-          src="/images/marketing/14-ai-digital-interface.jpg"
+          src="/images/marketing/21-digital-tools.jpg"
           alt=""
           fill
           priority

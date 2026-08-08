@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { AlertTriangle } from "lucide-react";
 import { supabaseServerSelect, supabaseServerSelectOne } from "../../../lib/supabaseServer";
+import { ACADEMY_CATEGORY_IMAGES } from "../../../lib/academyImages";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +32,21 @@ export default async function AcademyCategoryPage({ params }) {
   return (
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
       <Link href="/academy" className="text-sm text-ink-secondary hover:text-clay">&larr; Textile Academy</Link>
-      <div className="max-w-2xl mt-4 mb-10">
+
+      {ACADEMY_CATEGORY_IMAGES[category.slug] && (
+        <div className="relative aspect-[21/9] rounded-lg overflow-hidden mt-4 mb-10">
+          <Image
+            src={ACADEMY_CATEGORY_IMAGES[category.slug]}
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+      )}
+
+      <div className="max-w-2xl mb-10">
         <h1 className="text-3xl font-semibold text-graphite mb-3">{category.name}</h1>
         <p className="text-ink-secondary">{category.description}</p>
       </div>
