@@ -79,6 +79,9 @@ export default function Header() {
             )}
           </div>
 
+          <Link href="/academy" className="hover:text-clay transition-colors">
+            Academy
+          </Link>
           <Link href="/tools" className="hover:text-clay transition-colors">
             Tools
           </Link>
@@ -125,7 +128,10 @@ export default function Header() {
               {s.label}
             </Link>
           ))}
-          <Link href="/tools" className="mt-2" onClick={() => setMobileOpen(false)}>
+          <Link href="/academy" className="mt-2" onClick={() => setMobileOpen(false)}>
+            Academy
+          </Link>
+          <Link href="/tools" onClick={() => setMobileOpen(false)}>
             Tools
           </Link>
           <Link href="/blog" onClick={() => setMobileOpen(false)}>

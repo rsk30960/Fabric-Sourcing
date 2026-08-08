@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { supabase } from "../../lib/supabaseClient";
+import { supabaseServerSelect } from "../../lib/supabaseServer";
 import DivisionArt from "../../components/DivisionArt";
 
 const CATEGORY_ICONS = {
@@ -20,16 +20,13 @@ export const metadata = {
 };
 
 async function getPosts() {
-  // Sorting client-side rather than with .order() — see app/products/[division]/page.js
-  // getProducts() comment; this supabase-js version has the same silent-zero-rows behavior
-  // with .order() chained onto a query, not just embedded-resource selects.
-  try {
-    const { data, error } = await supabase.from("blogs").select("id,title,slug,category,publish_date,author").eq("is_published", true);
-    if (error) throw error;
-    return (data || []).sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
-  } catch {
-    return [];
-  }
+  // Server-side reads use supabaseServerSelect (raw fetch) — see lib/supabaseServer.js.
+  // Sorting client-side rather than with .order() on principle, same reasoning.
+  const posts = await supabaseServerSelect(
+    "blogs",
+    "select=id,title,slug,category,publish_date,author&is_published=eq.true"
+  );
+  return posts.sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
 }
 
 export default async function BlogIndexPage() {

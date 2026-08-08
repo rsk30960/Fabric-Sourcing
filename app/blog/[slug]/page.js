@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { supabase } from "../../../lib/supabaseClient";
+import { supabaseServerSelect, supabaseServerSelectOne } from "../../../lib/supabaseServer";
 import DivisionArt from "../../../components/DivisionArt";
 
 const CATEGORY_ICONS = {
@@ -14,34 +14,16 @@ const CATEGORY_ICONS = {
 export const dynamic = "force-dynamic";
 
 async function getPost(slug) {
-  try {
-    const { data, error } = await supabase
-      .from("blogs")
-      .select("*")
-      .eq("slug", slug)
-      .eq("is_published", true)
-      .single();
-    if (error) throw error;
-    return data;
-  } catch {
-    return null;
-  }
+  // Server-side reads use supabaseServerSelect (raw fetch) — see lib/supabaseServer.js.
+  return supabaseServerSelectOne("blogs", `select=*&slug=eq.${encodeURIComponent(slug)}&is_published=eq.true`);
 }
 
 async function getRelatedPosts(category, excludeId) {
-  try {
-    const { data, error } = await supabase
-      .from("blogs")
-      .select("id, title, slug")
-      .eq("is_published", true)
-      .eq("category", category)
-      .neq("id", excludeId)
-      .limit(3);
-    if (error) throw error;
-    return data || [];
-  } catch {
-    return [];
-  }
+  const posts = await supabaseServerSelect(
+    "blogs",
+    `select=id,title,slug&is_published=eq.true&category=eq.${encodeURIComponent(category)}&id=neq.${excludeId}`
+  );
+  return posts.slice(0, 3);
 }
 
 export async function generateMetadata({ params }) {

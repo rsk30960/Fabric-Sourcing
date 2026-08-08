@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getDivision } from "../../../lib/divisions";
-import { supabase } from "../../../lib/supabaseClient";
+import { supabaseServerSelect } from "../../../lib/supabaseServer";
 import { ProductionTypeBadge, MarketsServedBadge } from "../../../components/ProductBadges";
 import SpecificationForm from "../../../components/SpecificationForm";
 import DivisionArt from "../../../components/DivisionArt";
@@ -22,31 +22,21 @@ export async function generateMetadata({ params }) {
 }
 
 async function getProducts(divisionName) {
-  // Deliberately NOT using embedded-resource select syntax (category:categories(...)) — for
-  // reasons not fully understood, this installed version of @supabase/supabase-js silently
-  // returns zero rows when an embed is combined with certain column-list lengths/combinations
-  // (confirmed by direct A/B testing; an identical raw fetch() to the same REST endpoint always
-  // returns correct data regardless). Fetching products and categories separately and joining
-  // in JS sidesteps the bug entirely and is simple enough given categories is a tiny table.
-  try {
-    const [{ data: products, error: productsError }, { data: categories, error: categoriesError }] = await Promise.all([
-      supabase
-        .from("products")
-        .select("id,name,sku,production_type,markets_served,available_sizes,images,category_id")
-        .eq("is_published", true),
-      supabase.from("categories").select("id,division,subcategory"),
-    ]);
-    if (productsError) throw productsError;
-    if (categoriesError) throw categoriesError;
+  // Server-side reads use supabaseServerSelect (raw fetch), not the supabase-js client — see
+  // lib/supabaseServer.js for why. Fetching products and categories separately and joining in
+  // JS also sidesteps needing embedded-resource select syntax.
+  const [products, categories] = await Promise.all([
+    supabaseServerSelect(
+      "products",
+      "select=id,name,sku,production_type,markets_served,available_sizes,images,category_id&is_published=eq.true"
+    ),
+    supabaseServerSelect("categories", "select=id,division,subcategory"),
+  ]);
 
-    const categoryById = new Map((categories || []).map((c) => [c.id, c]));
-    return (products || [])
-      .map((p) => ({ ...p, category: categoryById.get(p.category_id) || null }))
-      .filter((p) => p.category?.division === divisionName);
-  } catch {
-    // No Supabase project connected yet, or query failed — degrade to empty state rather than crash.
-    return [];
-  }
+  const categoryById = new Map(categories.map((c) => [c.id, c]));
+  return products
+    .map((p) => ({ ...p, category: categoryById.get(p.category_id) || null }))
+    .filter((p) => p.category?.division === divisionName);
 }
 
 export default async function DivisionPage({ params }) {

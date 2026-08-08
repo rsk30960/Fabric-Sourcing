@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getDivision } from "../../../../lib/divisions";
-import { supabase } from "../../../../lib/supabaseClient";
+import { supabaseServerSelect, supabaseServerSelectOne } from "../../../../lib/supabaseServer";
 import { ProductionTypeBadge, MarketsServedBadge } from "../../../../components/ProductBadges";
 import DivisionArt from "../../../../components/DivisionArt";
 
@@ -10,31 +10,20 @@ import DivisionArt from "../../../../components/DivisionArt";
 export const dynamic = "force-dynamic";
 
 async function getProduct(productId) {
-  // See app/products/[division]/page.js getProducts() comment — embedded-resource select
-  // syntax (category:categories(...)) unreliably returns zero rows with this supabase-js
-  // version when combined with a wide column list. Fetching separately and joining in JS
-  // avoids the bug.
-  try {
-    const { data: product, error: productError } = await supabase
-      .from("products")
-      .select("*")
-      .eq("id", productId)
-      .single();
-    if (productError) throw productError;
+  // Server-side reads use supabaseServerSelect (raw fetch) — see lib/supabaseServer.js.
+  const product = await supabaseServerSelectOne("products", `select=*&id=eq.${encodeURIComponent(productId)}`);
+  if (!product) return null;
 
-    const [{ data: category }, { data: supplier }] = await Promise.all([
-      product.category_id
-        ? supabase.from("categories").select("division,subcategory").eq("id", product.category_id).single()
-        : { data: null },
-      product.supplier_id
-        ? supabase.from("suppliers").select("name,region,certifications").eq("id", product.supplier_id).single()
-        : { data: null },
-    ]);
+  const [category, supplier] = await Promise.all([
+    product.category_id
+      ? supabaseServerSelectOne("categories", `select=division,subcategory&id=eq.${product.category_id}`)
+      : null,
+    product.supplier_id
+      ? supabaseServerSelectOne("suppliers", `select=name,region,certifications&id=eq.${product.supplier_id}`)
+      : null,
+  ]);
 
-    return { ...product, category, supplier };
-  } catch {
-    return null;
-  }
+  return { ...product, category, supplier };
 }
 
 export default async function ProductDetailPage({ params }) {
