@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-border bg-graphite text-white mt-16">
       <div className="max-w-content mx-auto px-4 md:px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         <div className="col-span-2 md:col-span-1">
-          <p className="font-semibold text-base mb-2">Fabric Sourcing</p>
+          <p className="font-semibold text-base mb-2">Vexora Global</p>
           <p className="text-white/60">
             Textile, apparel, uniform, workwear, sourcing &amp; consulting — under one roof.
           </p>
@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/40">
-        &copy; {new Date().getFullYear()} Fabric Sourcing. Working name — final brand pending.
+        &copy; {new Date().getFullYear()} Vexora Global. All rights reserved.
       </div>
     </footer>
   );

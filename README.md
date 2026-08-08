@@ -1,4 +1,4 @@
-# Project IronShield / Fabric Sourcing (working name — brand TBD)
+# Project IronShield / Vexora Global
 
 **A textile/apparel B2B sourcing and manufacturing business, building toward an AI-powered digital
 business platform.** See [docs/platform-vision-v2.md](docs/platform-vision-v2.md) for the long-term
@@ -9,7 +9,7 @@ for managing leads and products. Live at https://github.com/rsk30960/Fabric-Sour
 
 ## Status
 
-- [ ] Business name / brand finalized (working name "IronShield" only)
+- [x] Business name / brand finalized — Vexora Global ("IronShield" remains the internal project codename)
 - [x] Volume 1 — Business Requirements: **substantially complete** (vision, brand architecture, market
   scope, objectives/targets, personas, trust signals, conversion channels confirmed)
 - [x] Volume 2 — Website Functional Requirements: **all pages drafted** (Home, About, Divisions/Products,

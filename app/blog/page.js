@@ -15,7 +15,7 @@ const CATEGORY_ICONS = {
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Blog / Knowledge Centre | Fabric Sourcing",
+  title: "Blog / Knowledge Centre | Vexora Global",
   description: "Industry knowledge and technical insight from 20+ years in textiles.",
 };
 

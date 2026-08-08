@@ -1,6 +1,6 @@
 import LegalPagePlaceholder from "../../../components/LegalPagePlaceholder";
 
-export const metadata = { title: "Cookie Policy | Fabric Sourcing" };
+export const metadata = { title: "Cookie Policy | Vexora Global" };
 
 export default function CookiePolicyPage() {
   return (

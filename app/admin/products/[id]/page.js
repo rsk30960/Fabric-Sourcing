@@ -3,7 +3,7 @@ import RequireAdminAuth from "../../../../components/RequireAdminAuth";
 import AdminNav from "../../../../components/AdminNav";
 
 export const metadata = {
-  title: "Admin — Edit Product | Fabric Sourcing",
+  title: "Admin — Edit Product | Vexora Global",
   robots: { index: false, follow: false },
 };
 

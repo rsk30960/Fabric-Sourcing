@@ -1,7 +1,7 @@
 import ConsultingForm from "../../../components/ConsultingForm";
 
 export const metadata = {
-  title: "Textile Consulting | Fabric Sourcing",
+  title: "Textile Consulting | Vexora Global",
   description: "Advisory built on 20+ years of hands-on textile industry experience.",
 };
 

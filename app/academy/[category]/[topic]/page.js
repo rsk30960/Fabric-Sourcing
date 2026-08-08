@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
   const { category, article } = await getArticle(params.category, params.topic);
   if (!article) return {};
   return {
-    title: `${article.title} | Textile Academy | Fabric Sourcing`,
+    title: `${article.title} | Textile Academy | Vexora Global`,
     description: article.summary || `${article.title} — part of the ${category.name} academy category.`,
   };
 }

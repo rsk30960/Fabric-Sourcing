@@ -6,7 +6,7 @@ import { DIVISIONS } from "../../lib/divisions";
 // Top-level "browse everything" hub, distinct from per-division listing pages — routes into
 // them rather than re-listing every product.
 export const metadata = {
-  title: "Catalogue | Fabric Sourcing",
+  title: "Catalogue | Vexora Global",
   description: "Browse our product divisions, or get the full catalogue sent to your inbox.",
 };
 

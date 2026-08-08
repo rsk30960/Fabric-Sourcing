@@ -4,7 +4,7 @@ import CareersForm from "../../components/CareersForm";
 // Freelance/contract-oriented, not full-time roles — solo operation today (Volume 4 §4.7),
 // plans to bring on freelancers.
 export const metadata = {
-  title: "Careers | Fabric Sourcing",
+  title: "Careers | Vexora Global",
   description: "We work with freelance and contract talent across textile production, sourcing, and design.",
 };
 

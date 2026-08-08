@@ -35,7 +35,7 @@ export default function GarmentCostClient() {
     <ToolShell
       title="Garment Cost Estimator"
       description="Break your own fabric, trims, labor, and overhead figures into a per-unit cost and a suggested selling price at your target margin. Every number comes from you — this doesn't assume market prices."
-      disclaimer="A cost-breakdown calculator only. It does not reflect Fabric Sourcing's actual pricing, which is quote-per-specification — see any product page or the Specification Enquiry Form for a real quote."
+      disclaimer="A cost-breakdown calculator only. It does not reflect Vexora Global's actual pricing, which is quote-per-specification — see any product page or the Specification Enquiry Form for a real quote."
     >
       <div className="mb-5">
         <Field label="Currency">

@@ -5,7 +5,7 @@ import DivisionArt from "../../components/DivisionArt";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Textile Academy | Fabric Sourcing",
+  title: "Textile Academy | Vexora Global",
   description: "Free textile and apparel education — fibres to finishing, manufacturing, workwear compliance, sourcing, and business fundamentals.",
 };
 

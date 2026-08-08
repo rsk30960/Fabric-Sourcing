@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-// PLACEHOLDER visual identity — Volume 9 (UI/UX Design System) is unresolved pending final brand name
-// (currently "Fabric Sourcing," a working name — see docs/volume-1-business-requirements.md §1.1) and
-// visual identity decisions. This palette is a professional placeholder so the site is usable and coherent
-// during development; expect it to be replaced wholesale once Volume 9 is resolved.
+// PLACEHOLDER visual identity — Volume 9 (UI/UX Design System) is unresolved pending final visual
+// identity decisions for Vexora Global (business name confirmed; see docs/volume-1-business-requirements.md
+// §1.1). This palette is a professional placeholder so the site is usable and coherent during
+// development; expect it to be replaced wholesale once Volume 9 is resolved.
 module.exports = {
   content: [
     "./app/**/*.{js,jsx}",

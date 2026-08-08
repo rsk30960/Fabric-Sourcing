@@ -6,7 +6,7 @@ import { MessageSquare, X, Send } from "lucide-react";
 const GREETING = {
   role: "assistant",
   content:
-    "Hi! I'm the Fabric Sourcing AI Consultant. Ask me about our products, sourcing process, or industry topics — or tell me what you're looking for and I'll pass your details to the team.",
+    "Hi! I'm the Vexora Global AI Consultant. Ask me about our products, sourcing process, or industry topics — or tell me what you're looking for and I'll pass your details to the team.",
 };
 
 export default function AIConsultant() {
@@ -65,7 +65,7 @@ export default function AIConsultant() {
       {open && (
         <div className="fixed bottom-40 right-6 z-50 w-[calc(100vw-3rem)] max-w-sm h-[28rem] bg-surface-card border border-border rounded-md shadow-xl flex flex-col overflow-hidden">
           <div className="bg-graphite text-white px-4 py-3 shrink-0">
-            <p className="text-sm font-medium">Fabric Sourcing AI Consultant</p>
+            <p className="text-sm font-medium">Vexora Global AI Consultant</p>
             <p className="text-xs text-white/70">
               AI assistant — not a substitute for a formal quote or expert compliance advice.
             </p>

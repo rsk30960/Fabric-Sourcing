@@ -1,7 +1,7 @@
 import UniformPlanningClient from "./UniformPlanningClient";
 
 export const metadata = {
-  title: "Uniform Planning Calculator | Fabric Sourcing",
+  title: "Uniform Planning Calculator | Vexora Global",
   description: "Plan quantities and budget for a school uniform program.",
 };
 

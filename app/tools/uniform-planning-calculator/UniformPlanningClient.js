@@ -51,7 +51,7 @@ export default function UniformPlanningClient() {
     <ToolShell
       title="Uniform Planning Calculator (Schools)"
       description="Plan quantities and budget for a school uniform program — add each garment type, quantity per student, and unit price."
-      disclaimer="Unit prices are whatever you enter — this tool does not assume or look up Fabric Sourcing's actual pricing. For a real quote, use the Specification Enquiry Form."
+      disclaimer="Unit prices are whatever you enter — this tool does not assume or look up Vexora Global's actual pricing. For a real quote, use the Specification Enquiry Form."
     >
       <div className="grid sm:grid-cols-2 gap-5 mb-8">
         <Field label="Number of students">

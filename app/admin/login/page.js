@@ -1,7 +1,7 @@
 import AdminLoginForm from "../../../components/AdminLoginForm";
 
 export const metadata = {
-  title: "Admin Login | Fabric Sourcing",
+  title: "Admin Login | Vexora Global",
   robots: { index: false, follow: false },
 };
 

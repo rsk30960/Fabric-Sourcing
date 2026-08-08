@@ -1,6 +1,6 @@
 import LegalPagePlaceholder from "../../../components/LegalPagePlaceholder";
 
-export const metadata = { title: "Privacy Policy | Fabric Sourcing" };
+export const metadata = { title: "Privacy Policy | Vexora Global" };
 
 export default function PrivacyPolicyPage() {
   return (

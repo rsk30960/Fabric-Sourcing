@@ -1,7 +1,7 @@
 import SpecificationForm from "../../components/SpecificationForm";
 
 export const metadata = {
-  title: "Request a Quote | Fabric Sourcing",
+  title: "Request a Quote | Vexora Global",
   description:
     "Tell us your fabric, trims, artwork, measurements, styling, and quantity — we'll get back to you with pricing and conditions within 1-2 business days.",
 };

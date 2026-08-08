@@ -1,6 +1,6 @@
 import LegalPagePlaceholder from "../../../components/LegalPagePlaceholder";
 
-export const metadata = { title: "Terms of Use | Fabric Sourcing" };
+export const metadata = { title: "Terms of Use | Vexora Global" };
 
 export default function TermsPage() {
   return (

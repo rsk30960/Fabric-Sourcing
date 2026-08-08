@@ -26,7 +26,7 @@ export default function Header() {
     <header className="border-b border-border bg-surface-card sticky top-0 z-40">
       <div className="max-w-content mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         <Link href="/" className="font-semibold text-lg text-graphite">
-          Fabric Sourcing
+          Vexora Global
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-ink">

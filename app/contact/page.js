@@ -1,7 +1,7 @@
 import ContactForm from "../../components/ContactForm";
 
 export const metadata = {
-  title: "Contact | Fabric Sourcing",
+  title: "Contact | Vexora Global",
   description: "Get in touch for general enquiries about our products, services, or sourcing capability.",
 };
 

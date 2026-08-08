@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
   const post = await getPost(params.slug);
   if (!post) return {};
   return {
-    title: post.meta_title || `${post.title} | Fabric Sourcing`,
+    title: post.meta_title || `${post.title} | Vexora Global`,
     description: post.meta_description || undefined,
   };
 }

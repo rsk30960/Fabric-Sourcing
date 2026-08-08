@@ -20,7 +20,7 @@ async function getCategoryAndArticles(slug) {
 export async function generateMetadata({ params }) {
   const { category } = await getCategoryAndArticles(params.category);
   if (!category) return {};
-  return { title: `${category.name} | Textile Academy | Fabric Sourcing`, description: category.description };
+  return { title: `${category.name} | Textile Academy | Vexora Global`, description: category.description };
 }
 
 export default async function AcademyCategoryPage({ params }) {
