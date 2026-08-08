@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ShieldCheck, PackageSearch, FileCheck2, UserRound } from "lucide-react";
 import Button from "../components/Button";
 import DivisionCard from "../components/DivisionCard";
-import DivisionArt from "../components/DivisionArt";
 
 // Home page — docs/volume-2-website-functional-requirements.md §2.4
 const DIVISIONS = [
@@ -12,6 +12,8 @@ const DIVISIONS = [
     href: "/products/fashion-apparel",
     tag: "Partner-Sourced",
     icon: "shirt",
+    heroImage: "/images/marketing/12-fashion-runway.jpg",
+    heroImagePosition: "object-top",
   },
   {
     label: "School Uniforms",
@@ -19,6 +21,8 @@ const DIVISIONS = [
     href: "/products/school-uniforms",
     tag: "Owned Manufacturing",
     icon: "graduationCap",
+    heroImage: "/images/marketing/09-school-uniforms.jpg",
+    heroImagePosition: "object-top",
   },
   {
     label: "Corporate Uniforms",
@@ -26,6 +30,8 @@ const DIVISIONS = [
     href: "/products/corporate-uniforms",
     tag: "Owned Manufacturing",
     icon: "briefcase",
+    heroImage: "/images/marketing/11-corporate-apparel.jpg",
+    heroImagePosition: "object-top",
   },
   {
     label: "Industrial Workwear",
@@ -33,6 +39,8 @@ const DIVISIONS = [
     href: "/products/industrial-workwear",
     tag: "Owned Manufacturing",
     icon: "hardHat",
+    heroImage: "/images/marketing/10-industrial-workwear.jpg",
+    heroImagePosition: "object-top",
   },
   {
     label: "Technical Fabrics",
@@ -40,6 +48,7 @@ const DIVISIONS = [
     href: "/products/technical-fabrics",
     tag: "Partner-Sourced",
     icon: "layers",
+    heroImage: "/images/marketing/06-fabric-flowing-silk.jpg",
   },
   {
     label: "Sourcing",
@@ -47,20 +56,31 @@ const DIVISIONS = [
     href: "/services/sourcing",
     tag: "Flagship Service",
     icon: "handshake",
+    heroImage: "/images/marketing/03-fiber-twisting-yarn.jpg",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-graphite text-white">
-        <div className="max-w-content mx-auto px-4 md:px-6 py-20 md:py-28 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
-          <div>
+      {/* Hero — AI-illustrated atmosphere shot, not documentation of our actual facility (see
+          components/DivisionArt.js header comment for the reasoning behind that distinction) */}
+      <section className="relative bg-graphite text-white overflow-hidden">
+        <Image
+          src="/images/marketing/01-cotton-field-sunrise.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-35"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-graphite via-graphite/85 to-graphite/50" />
+        <div className="relative max-w-content mx-auto px-4 md:px-6 py-20 md:py-28">
+          <div className="max-w-2xl">
             <p className="text-clay font-medium mb-3 text-sm uppercase tracking-wide">
               Textile &middot; Apparel &middot; Uniforms &middot; Workwear &middot; Sourcing &middot; Consulting
             </p>
-            <h1 className="text-3xl md:text-5xl font-semibold max-w-2xl leading-tight">
+            <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
               Your sourcing partner, built on 20 years in textiles.
             </h1>
             <p className="text-white/70 max-w-xl mt-5 text-base md:text-lg">
@@ -75,13 +95,6 @@ export default function HomePage() {
                 Meet the Founder
               </Button>
             </div>
-          </div>
-
-          {/* Icon mosaic — decorative, on-brand composition, not photography (see DivisionArt.js) */}
-          <div className="hidden lg:grid grid-cols-2 gap-3">
-            {["shirt", "hardHat", "graduationCap", "layers"].map((icon) => (
-              <DivisionArt key={icon} icon={icon} size="sm" />
-            ))}
           </div>
         </div>
       </section>
@@ -104,6 +117,15 @@ export default function HomePage() {
       <section className="bg-surface-card border-y border-border">
         <div className="max-w-content mx-auto px-4 md:px-6 py-16 grid md:grid-cols-3 gap-8">
           <div>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+              <Image
+                src="/images/marketing/05-fabric-knitted.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
             <ShieldCheck className="text-clay mb-3" size={28} />
             <h3 className="font-semibold text-graphite mb-1">Owned manufacturing, where it counts</h3>
             <p className="text-sm text-ink-secondary">
@@ -111,6 +133,15 @@ export default function HomePage() {
             </p>
           </div>
           <div>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+              <Image
+                src="/images/marketing/04-yarn-winding-cone.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
             <PackageSearch className="text-clay mb-3" size={28} />
             <h3 className="font-semibold text-graphite mb-1">A vetted partner-factory network</h3>
             <p className="text-sm text-ink-secondary">
@@ -119,6 +150,15 @@ export default function HomePage() {
             </p>
           </div>
           <div>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+              <Image
+                src="/images/marketing/08-quality-inspection.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
             <FileCheck2 className="text-clay mb-3" size={28} />
             <h3 className="font-semibold text-graphite mb-1">Samples before you commit</h3>
             <p className="text-sm text-ink-secondary">
@@ -140,7 +180,7 @@ export default function HomePage() {
               20+ years in textiles — one point of accountability
             </h2>
             <p className="text-ink-secondary mb-4">
-              Fabric Sourcing is a new company, built entirely on the founder's two decades of hands-on
+              Vexora Global is a new company, built entirely on the founder's two decades of hands-on
               textile industry experience. Read the full story, our approach to quality, and how we work
               with both domestic and export buyers.
             </p>

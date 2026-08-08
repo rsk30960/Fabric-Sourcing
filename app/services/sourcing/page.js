@@ -1,14 +1,26 @@
+import Image from "next/image";
 import { Handshake, Factory, ShieldCheck } from "lucide-react";
 import SourcingForm from "../../../components/SourcingForm";
 
 export const metadata = {
-  title: "Sourcing | Fabric Sourcing",
+  title: "Sourcing | Vexora Global",
   description: "Our flagship service — an ongoing sourcing partnership across product categories, for domestic and export buyers.",
 };
 
 export default function SourcingPage() {
   return (
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
+      <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-12">
+        <Image
+          src="/images/marketing/03-fiber-twisting-yarn.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
       <div className="max-w-2xl mb-12">
         <p className="text-clay font-medium text-sm uppercase tracking-wide mb-2">Flagship Service</p>
         <h1 className="text-3xl font-semibold text-graphite mb-3">Sourcing</h1>
@@ -30,6 +42,15 @@ export default function SourcingPage() {
           </p>
         </div>
         <div>
+          <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+            <Image
+              src="/images/marketing/07-garment-stitching.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </div>
           <Factory className="text-clay mb-3" size={28} />
           <h3 className="font-semibold text-graphite mb-2">Owned + partner network</h3>
           <p className="text-sm text-ink-secondary">

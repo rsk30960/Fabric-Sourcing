@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getDivision } from "../../../lib/divisions";
 import { supabaseServerSelect } from "../../../lib/supabaseServer";
 import { ProductionTypeBadge, MarketsServedBadge } from "../../../components/ProductBadges";
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }) {
   const division = getDivision(params.division);
   if (!division) return {};
   return {
-    title: `${division.name} | Fabric Sourcing`,
+    title: `${division.name} | Vexora Global`,
     description: division.description,
   };
 }
@@ -46,6 +47,18 @@ export default async function DivisionPage({ params }) {
   if (division.enquiryOnly) {
     return (
       <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
+        {division.heroImage && (
+          <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-10">
+            <Image
+              src={division.heroImage}
+              alt=""
+              fill
+              priority
+              className={`object-cover ${division.heroImagePosition || ""}`}
+              sizes="100vw"
+            />
+          </div>
+        )}
         <div className="max-w-2xl mb-12">
           <h1 className="text-3xl font-semibold text-graphite mb-3">{division.name}</h1>
           <p className="text-ink-secondary">{division.description}</p>
@@ -61,6 +74,18 @@ export default async function DivisionPage({ params }) {
 
   return (
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
+      {division.heroImage && (
+        <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-10">
+          <Image
+            src={division.heroImage}
+            alt=""
+            fill
+            priority
+            className={`object-cover ${division.heroImagePosition || ""}`}
+            sizes="100vw"
+          />
+        </div>
+      )}
       <div className="max-w-2xl mb-4">
         <h1 className="text-3xl font-semibold text-graphite mb-3">{division.name}</h1>
         <p className="text-ink-secondary">{division.description}</p>

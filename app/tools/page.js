@@ -1,15 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 import { TOOLS } from "../../lib/tools";
 import DivisionArt from "../../components/DivisionArt";
 
 export const metadata = {
-  title: "Digital Tools | Fabric Sourcing",
+  title: "Digital Tools | Vexora Global",
   description: "Free calculators and planning tools for textile and apparel buyers — fabric weight, consumption, costing, container loads, and more.",
 };
 
 export default function ToolsIndexPage() {
   return (
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
+      <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-12">
+        <Image
+          src="/images/marketing/14-ai-digital-interface.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
       <div className="max-w-2xl mb-12">
         <h1 className="text-3xl font-semibold text-graphite mb-3">Digital Tools</h1>
         <p className="text-ink-secondary">
