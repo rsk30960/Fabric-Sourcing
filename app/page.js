@@ -63,7 +63,7 @@ const DIVISIONS = [
     href: "/products/hospital-uniforms",
     tag: "Owned Manufacturing",
     icon: "stethoscope",
-    // heroImage: set once the division banner is generated
+    heroImage: "/images/marketing/39-hospital-uniforms.jpg",
   },
   {
     label: "Technical Fabrics",
