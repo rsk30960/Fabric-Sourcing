@@ -1,14 +1,13 @@
 import Image from "next/image";
-import { Factory, PackageCheck, Globe2, UserRound } from "lucide-react";
+import { Factory, PackageCheck, Globe2 } from "lucide-react";
 import Button from "../../components/Button";
 
 // About page — docs/volume-2-website-functional-requirements.md §2.5
-// Founder bio/photo copy is intentionally placeholder text, not fabricated biography —
-// real content needs to come from the founder directly (Volume 1 §1.1 decision: visible founder).
+// Founder letter is real content, supplied directly by the founder (Saravanakumar R.) —
+// not placeholder/fabricated copy.
 export const metadata = {
-  title: "About | Vexora Global",
-  description:
-    "A new company built on 20+ years of textile industry experience — owned manufacturing for Uniforms and Industrial Workwear, a trusted partner-factory network for everything else.",
+  title: "The Journey | Vexora Global",
+  description: "A letter from our founder, Saravanakumar R., on why Vexora Global exists and where it's headed.",
 };
 
 export default function AboutPage() {
@@ -25,25 +24,87 @@ export default function AboutPage() {
         />
       </div>
 
-      {/* Founder profile */}
-      <section className="grid md:grid-cols-3 gap-10 items-start mb-20">
-        <div className="w-40 h-40 rounded-full bg-surface-page border border-border flex items-center justify-center mx-auto md:mx-0" aria-hidden="true">
-          <UserRound size={72} className="text-ink-secondary" strokeWidth={1.5} />
+      {/* Founder letter */}
+      <section className="max-w-2xl mx-auto mb-20">
+        <p className="text-clay font-medium text-sm uppercase tracking-wide mb-2">The Journey</p>
+        <h1 className="text-3xl font-semibold text-graphite mb-8 leading-tight">
+          Building More Than a Business — Building an Industry Platform
+        </h1>
+
+        <div className="flex items-center gap-4 mb-10">
+          <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 border border-border">
+            <Image
+              src="/images/brand/founder-photo.jpg"
+              alt="Saravanakumar R."
+              fill
+              className="object-cover"
+              sizes="80px"
+            />
+          </div>
+          <div>
+            <p className="font-semibold text-graphite">Saravanakumar R.</p>
+            <p className="text-sm text-ink-secondary">Founder &amp; Chief Executive Officer, Vexora Global</p>
+          </div>
         </div>
-        <div className="md:col-span-2">
-          <h1 className="text-3xl font-semibold text-graphite mb-4">
-            Built on 20+ years in textiles
-          </h1>
-          <p className="text-ink-secondary mb-4">
-            [Founder bio placeholder — name, photo, and career details to be supplied. This section is the
-            single most important trust signal on the site: Vexora Global is a new company with no
-            corporate track record of its own, so credibility rests on the founder's two decades of
-            hands-on textile industry experience, not on company history.]
+
+        <div className="font-serif text-lg text-ink-secondary space-y-6 leading-relaxed">
+          <p>
+            Every company begins with an idea. Some begin with a product. Others begin with an opportunity.
+            Vexora Global began with a question.
           </p>
-          <p className="text-ink-secondary">
-            [Placeholder: specific career highlights, prior roles, industry relationships, and what led to
-            starting this company — real content needed before launch.]
+          <blockquote className="border-l-2 border-clay pl-4 italic text-graphite">
+            &ldquo;Why should knowledge, innovation, and opportunity in the textile industry remain
+            disconnected?&rdquo;
+          </blockquote>
+          <p>
+            For more than two decades, I have had the privilege of working across the textile and apparel
+            value chain, collaborating with manufacturers, exporters, sourcing teams, product developers,
+            suppliers, and customers. Throughout this journey, I witnessed the remarkable craftsmanship and
+            dedication that drive our industry. I also saw recurring challenges — fragmented information,
+            disconnected supply chains, manual processes, and limited access to trusted knowledge.
           </p>
+          <p>
+            Those experiences shaped a belief that the future of textiles would not be defined only by
+            manufacturing excellence, but by the ability to connect people, knowledge, technology, and
+            opportunity through a single digital ecosystem.
+          </p>
+          <p>That belief became the foundation of Vexora Global.</p>
+          <p>
+            Our vision is simple yet ambitious: to build a platform where businesses can discover solutions,
+            professionals can expand their knowledge, manufacturers can reach new markets, and customers can
+            make informed decisions with confidence.
+          </p>
+          <p>
+            We believe that a company should be measured not only by the products it delivers, but also by
+            the value it creates for the industry it serves. This philosophy is reflected in every
+            initiative we undertake — from fashion apparel and industrial workwear to school uniforms,
+            corporate solutions, textile consulting, and the Textile Academy.
+          </p>
+          <p>
+            Technology is transforming every industry, and textiles are no exception. Artificial
+            Intelligence, digital collaboration, data-driven decision-making, and continuous learning will
+            shape the future of global apparel and textile businesses. Rather than viewing these changes as
+            challenges, we see them as opportunities to build smarter, faster, and more sustainable
+            solutions.
+          </p>
+          <p>
+            At Vexora Global, our mission is to bridge traditional textile expertise with modern digital
+            innovation. We aspire to create an ecosystem where knowledge becomes accessible, partnerships
+            become stronger, and businesses of every size can grow with confidence.
+          </p>
+          <p>This journey is only beginning.</p>
+          <p>
+            Every conversation, every partnership, and every project adds another thread to a much larger
+            story — a story of innovation, trust, craftsmanship, and global collaboration.
+          </p>
+          <p>Thank you for being part of that journey. Together, let&rsquo;s shape the future of textiles.</p>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-border">
+          <p className="text-xs uppercase tracking-wide text-ink-secondary mb-1">Founder</p>
+          <p className="font-semibold text-graphite">Saravanakumar R.</p>
+          <p className="text-sm text-ink-secondary">Founder &amp; Chief Executive Officer, Vexora Global</p>
+          <p className="text-sm text-clay italic mt-2">&ldquo;From Ideas to Impact.&rdquo;</p>
         </div>
       </section>
 

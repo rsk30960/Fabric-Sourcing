@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, PackageSearch, FileCheck2, UserRound } from "lucide-react";
+import { ShieldCheck, PackageSearch, FileCheck2 } from "lucide-react";
 import Button from "../components/Button";
 import DivisionCard from "../components/DivisionCard";
 import HeroCarousel from "../components/HeroCarousel";
@@ -108,7 +108,7 @@ export default function HomePage() {
                 Request a Quote
               </Button>
               <Button href="/about" variant="secondary" size="lg" className="border-white/40 text-white hover:bg-white/10">
-                Meet the Founder
+                The Journey
               </Button>
             </div>
           </div>
@@ -188,8 +188,14 @@ export default function HomePage() {
       {/* Founder teaser */}
       <section className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
         <div className="bg-surface-page rounded-lg p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center">
-          <div className="w-32 h-32 rounded-full bg-white border border-border flex items-center justify-center mx-auto md:mx-0" aria-hidden="true">
-            <UserRound size={56} className="text-ink-secondary" strokeWidth={1.5} />
+          <div className="relative w-32 h-32 rounded-full overflow-hidden border border-border mx-auto md:mx-0">
+            <Image
+              src="/images/brand/founder-photo.jpg"
+              alt="Saravanakumar R., Founder & CEO"
+              fill
+              className="object-cover"
+              sizes="128px"
+            />
           </div>
           <div className="md:col-span-2">
             <h2 className="text-xl font-semibold text-graphite mb-2">
@@ -201,7 +207,7 @@ export default function HomePage() {
               with both domestic and export buyers.
             </p>
             <Link href="/about" className="text-clay font-medium hover:underline">
-              Read the founder's story &rarr;
+              Read the journey &rarr;
             </Link>
           </div>
         </div>
