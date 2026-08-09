@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { supabaseServerSelect } from "../../lib/supabaseServer";
 import DivisionArt from "../../components/DivisionArt";
 
@@ -34,6 +35,17 @@ export default async function BlogIndexPage() {
 
   return (
     <div className="max-w-content mx-auto px-4 md:px-6 py-16 md:py-20">
+      <div className="relative aspect-[21/9] rounded-lg overflow-hidden mb-12">
+        <Image
+          src="/images/marketing/30-blog-hero.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
       <div className="max-w-2xl mb-12">
         <h1 className="text-3xl font-semibold text-graphite mb-3">Blog &amp; Knowledge Centre</h1>
         <p className="text-ink-secondary">

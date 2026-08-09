@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { TOOLS } from "../../lib/tools";
-import DivisionArt from "../../components/DivisionArt";
 
 export const metadata = {
   title: "Digital Tools | Vexora Global",
@@ -38,7 +37,15 @@ export default function ToolsIndexPage() {
             href={`/tools/${tool.slug}`}
             className="group block bg-surface-card border border-border rounded-md overflow-hidden hover:border-clay hover:shadow-md transition-all"
           >
-            <DivisionArt icon={tool.icon} size="sm" />
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={tool.image}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              />
+            </div>
             <div className="p-5">
               <h3 className="font-semibold text-graphite mb-1">{tool.name}</h3>
               <p className="text-sm text-ink-secondary">{tool.description}</p>

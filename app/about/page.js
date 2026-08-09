@@ -20,7 +20,7 @@ export default function AboutPage() {
           alt=""
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
       </div>
@@ -52,6 +52,15 @@ export default function AboutPage() {
         <h2 className="text-2xl font-semibold text-graphite mb-8">How we work</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+              <Image
+                src="/images/marketing/28-owned-manufacturing.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
             <Factory className="text-clay mb-3" size={28} />
             <h3 className="font-semibold text-graphite mb-2">Owned manufacturing</h3>
             <p className="text-sm text-ink-secondary">
@@ -60,6 +69,15 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden mb-4">
+              <Image
+                src="/images/marketing/29-partner-factory-network.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
             <PackageCheck className="text-clay mb-3" size={28} />
             <h3 className="font-semibold text-graphite mb-2">Partner-factory network</h3>
             <p className="text-sm text-ink-secondary">
@@ -101,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       <div className="text-center">
-        <Button href="/services/sourcing" variant="primary" size="lg">
+        <Button href="/services/sourcing" variant="accent" size="lg">
           Start a sourcing conversation
         </Button>
       </div>
