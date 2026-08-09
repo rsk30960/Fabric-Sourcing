@@ -58,6 +58,14 @@ const DIVISIONS = [
     heroImagePosition: "object-top",
   },
   {
+    label: "Hospital Uniforms",
+    description: "Doctor's coats, nurse scrubs, support staff uniforms, scrub caps.",
+    href: "/products/hospital-uniforms",
+    tag: "Owned Manufacturing",
+    icon: "stethoscope",
+    // heroImage: set once the division banner is generated
+  },
+  {
     label: "Technical Fabrics",
     description: "Sourced by treatment or application, fully custom to your specification.",
     href: "/products/technical-fabrics",

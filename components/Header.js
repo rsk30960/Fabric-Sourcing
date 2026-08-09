@@ -9,6 +9,7 @@ const DIVISIONS = [
   { label: "School Uniforms", href: "/products/school-uniforms" },
   { label: "Corporate Uniforms", href: "/products/corporate-uniforms" },
   { label: "Industrial Workwear", href: "/products/industrial-workwear" },
+  { label: "Hospital Uniforms", href: "/products/hospital-uniforms" },
   { label: "Technical Fabrics", href: "/products/technical-fabrics" },
 ];
 

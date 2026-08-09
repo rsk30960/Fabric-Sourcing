@@ -8,7 +8,7 @@
 
 import {
   Shirt, GraduationCap, Briefcase, HardHat, Layers,
-  Handshake, Lightbulb, BookOpen, LayoutGrid, Package,
+  Handshake, Lightbulb, BookOpen, LayoutGrid, Package, Stethoscope,
 } from "lucide-react";
 
 const ICONS = {
@@ -21,6 +21,7 @@ const ICONS = {
   lightbulb: Lightbulb,
   bookOpen: BookOpen,
   catalogue: LayoutGrid,
+  stethoscope: Stethoscope,
 };
 
 // Warm, earthy accent family — stays within the graphite/clay palette (deliberately never
@@ -36,6 +37,7 @@ const ACCENTS = {
   lightbulb: "#A9762C", // ochre — Academy / Consulting
   bookOpen: "#7A6A3F", // olive-brown — Blog
   catalogue: "#8F3F23", // rust — Catalogue
+  stethoscope: "#6B5D4F", // warm taupe — Hospital Uniforms
 };
 
 const SIZES = {

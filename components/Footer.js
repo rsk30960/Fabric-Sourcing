@@ -19,6 +19,7 @@ export default function Footer() {
             <li><Link href="/products/school-uniforms">School Uniforms</Link></li>
             <li><Link href="/products/corporate-uniforms">Corporate Uniforms</Link></li>
             <li><Link href="/products/industrial-workwear">Industrial Workwear</Link></li>
+            <li><Link href="/products/hospital-uniforms">Hospital Uniforms</Link></li>
             <li><Link href="/products/technical-fabrics">Technical Fabrics</Link></li>
           </ul>
         </div>

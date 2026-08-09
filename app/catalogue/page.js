@@ -15,6 +15,7 @@ const DIVISION_TAGS = {
   "school-uniforms": "Owned Manufacturing",
   "corporate-uniforms": "Owned Manufacturing",
   "industrial-workwear": "Owned Manufacturing",
+  "hospital-uniforms": "Owned Manufacturing",
   "technical-fabrics": "Partner-Sourced",
 };
 

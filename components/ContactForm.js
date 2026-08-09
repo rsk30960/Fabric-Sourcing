@@ -7,8 +7,8 @@ import { supabase } from "../lib/supabaseClient";
 // Low-friction, exploratory enquiry point. Distinct from the Specification Enquiry Form
 // (Volume 3 §3.3), which is for buyers ready to request a product quote.
 const COUNTRIES = ["India", "USA", "United Kingdom", "Germany", "France", "UAE", "Saudi Arabia", "Australia", "New Zealand", "Other"];
-const BUSINESS_TYPES = ["Brand / Retailer", "Distributor", "School", "Corporate", "Industrial / Manufacturing", "Other"];
-const REQUIREMENTS = ["Fashion Apparel", "School Uniforms", "Corporate Uniforms", "Industrial Workwear", "Technical Fabrics", "Textile Consulting", "Sourcing", "Other"];
+const BUSINESS_TYPES = ["Brand / Retailer", "Distributor", "School", "Corporate", "Industrial / Manufacturing", "Hospital / Healthcare", "Other"];
+const REQUIREMENTS = ["Fashion Apparel", "School Uniforms", "Corporate Uniforms", "Industrial Workwear", "Hospital Uniforms", "Technical Fabrics", "Textile Consulting", "Sourcing", "Other"];
 
 const initialState = {
   name: "",
