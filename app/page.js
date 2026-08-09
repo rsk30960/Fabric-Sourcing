@@ -3,6 +3,21 @@ import Image from "next/image";
 import { ShieldCheck, PackageSearch, FileCheck2, UserRound } from "lucide-react";
 import Button from "../components/Button";
 import DivisionCard from "../components/DivisionCard";
+import HeroCarousel from "../components/HeroCarousel";
+
+// Rotates through the hero background — process/atmosphere shots only (see
+// components/DivisionArt.js header comment for why these aren't documentation of our actual
+// facility). Order roughly follows the fibre -> yarn -> fabric -> global story.
+const HERO_CAROUSEL_IMAGES = [
+  "/images/marketing/01-cotton-field-sunrise.jpg",
+  "/images/marketing/02-cotton-fiber-floating.jpg",
+  "/images/marketing/03-fiber-twisting-yarn.jpg",
+  "/images/marketing/04-yarn-winding-cone.jpg",
+  "/images/marketing/05-fabric-knitted.jpg",
+  "/images/marketing/06-fabric-flowing-silk.jpg",
+  "/images/marketing/13-global-shipping.jpg",
+  "/images/marketing/14-ai-digital-interface.jpg",
+];
 
 // Home page — docs/volume-2-website-functional-requirements.md §2.4
 const DIVISIONS = [
@@ -66,15 +81,8 @@ export default function HomePage() {
       {/* Hero — AI-illustrated atmosphere shot, not documentation of our actual facility (see
           components/DivisionArt.js header comment for the reasoning behind that distinction) */}
       <section className="relative bg-graphite text-white overflow-hidden">
-        <Image
-          src="/images/marketing/01-cotton-field-sunrise.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover opacity-35"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-graphite via-graphite/85 to-graphite/50" />
+        <HeroCarousel images={HERO_CAROUSEL_IMAGES} />
+        <div className="absolute inset-0 bg-gradient-to-r from-graphite/90 via-graphite/55 to-graphite/10 pointer-events-none" />
         <div className="relative max-w-content mx-auto px-4 md:px-6 py-20 md:py-28">
           <div className="max-w-2xl">
             <p className="text-clay font-medium mb-3 text-sm uppercase tracking-wide">
