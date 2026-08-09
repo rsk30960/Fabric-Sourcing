@@ -5,7 +5,15 @@
 body {
   color: #2b2622;
   background: #f7f4ef;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Serif headings site-wide — craft/heritage feel, contrasted with the sans body text above. */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-source-serif), Georgia, serif;
 }
 
 a:focus-visible,

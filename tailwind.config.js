@@ -18,8 +18,8 @@ module.exports = {
           dark: "#171412",
         },
         clay: {
-          DEFAULT: "#B5502F",
-          dark: "#8F3F23",
+          DEFAULT: "#9C4E36",
+          dark: "#7A3D29",
         },
         surface: {
           page: "#F7F4EF",
@@ -43,6 +43,13 @@ module.exports = {
           info: "#0C447C",
           infoBg: "#EAF0FB",
         },
+      },
+      fontFamily: {
+        // Serif headings (craft/heritage feel) + clean sans body — set via CSS variables from
+        // next/font/google in app/layout.js. Applied globally to h1-h4 in globals.css; these
+        // utility classes exist for ad-hoc use (e.g. font-serif on a non-heading element).
+        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        serif: ["var(--font-source-serif)", "Georgia", "serif"],
       },
       borderRadius: {
         sm: "6px",
