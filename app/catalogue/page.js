@@ -38,6 +38,8 @@ export default function CataloguePage() {
             href={`/products/${slug}`}
             tag={DIVISION_TAGS[slug]}
             icon={d.icon}
+            heroImage={d.heroImage}
+            heroImagePosition={d.heroImagePosition}
           />
         ))}
       </div>
