@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-graphite text-white mt-16">
       <div className="max-w-content mx-auto px-4 md:px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         <div className="col-span-2 md:col-span-1">
-          <p className="font-semibold text-base mb-2">Vexora Global</p>
+          <div className="relative w-28 h-28 -ml-2 mb-2">
+            <Image src="/images/brand/logo-badge.jpg" alt="Vexora Global" fill className="object-contain" sizes="112px" />
+          </div>
           <p className="text-white/60">
             Textile, apparel, uniform, workwear, sourcing &amp; consulting — under one roof.
           </p>

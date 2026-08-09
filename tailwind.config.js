@@ -48,7 +48,7 @@ module.exports = {
         // Serif headings (craft/heritage feel) + clean sans body — set via CSS variables from
         // next/font/google in app/layout.js. Applied globally to h1-h4 in globals.css; these
         // utility classes exist for ad-hoc use (e.g. font-serif on a non-heading element).
-        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        sans: ["var(--font-work-sans)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
         serif: ["var(--font-source-serif)", "Georgia", "serif"],
       },
       borderRadius: {

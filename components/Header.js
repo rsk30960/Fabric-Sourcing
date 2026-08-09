@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -24,13 +25,20 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="border-b border-border bg-surface-card sticky top-0 z-40">
-      <div className="max-w-content mx-auto px-4 md:px-6 flex items-center justify-between h-16">
-        <Link href="/" className="font-semibold text-lg text-graphite">
-          Vexora Global
+    <header className="border-b border-white/10 bg-graphite sticky top-0 z-40">
+      <div className="max-w-content mx-auto px-4 md:px-6 flex items-center justify-between h-20 md:h-24">
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/brand/logo-header-full.png"
+            alt="Vexora Global — From Ideas to Impact"
+            width={1200}
+            height={480}
+            priority
+            className="h-16 md:h-20 w-auto"
+          />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm text-ink">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
           <div
             className="relative"
             onMouseEnter={() => setDivisionsOpen(true)}
@@ -40,14 +48,14 @@ export default function Header() {
             {divisionsOpen && (
               <div className="absolute top-full left-0 pt-2">
                 <div className="bg-surface-card border border-border rounded-md shadow-lg py-2 w-56">
-                  <Link href="/catalogue" className="block px-4 py-2 font-medium hover:bg-surface-page hover:text-clay border-b border-border mb-1">
+                  <Link href="/catalogue" className="block px-4 py-2 font-medium text-ink hover:bg-surface-page hover:text-clay border-b border-border mb-1">
                     Full Catalogue
                   </Link>
                   {DIVISIONS.map((d) => (
                     <Link
                       key={d.href}
                       href={d.href}
-                      className="block px-4 py-2 hover:bg-surface-page hover:text-clay"
+                      className="block px-4 py-2 text-ink hover:bg-surface-page hover:text-clay"
                     >
                       {d.label}
                     </Link>
@@ -70,7 +78,7 @@ export default function Header() {
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="block px-4 py-2 hover:bg-surface-page hover:text-clay"
+                      className="block px-4 py-2 text-ink hover:bg-surface-page hover:text-clay"
                     >
                       {s.label}
                     </Link>
@@ -97,14 +105,14 @@ export default function Header() {
           </Link>
           <Link
             href="/contact"
-            className="bg-graphite text-white px-4 py-2 rounded-sm hover:bg-graphite-dark transition-colors"
+            className="bg-clay text-white px-4 py-2 rounded-sm hover:bg-clay-dark transition-colors"
           >
             Contact
           </Link>
         </nav>
 
         <button
-          className="md:hidden"
+          className="md:hidden text-white"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -113,8 +121,8 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border px-4 py-4 flex flex-col gap-3 text-sm text-ink">
-          <span className="text-ink-secondary font-medium">Products</span>
+        <div className="md:hidden border-t border-white/10 px-4 py-4 flex flex-col gap-3 text-sm text-white/80">
+          <span className="text-white/50 font-medium">Products</span>
           <Link href="/catalogue" className="pl-3 font-medium" onClick={() => setMobileOpen(false)}>
             Full Catalogue
           </Link>
@@ -123,7 +131,7 @@ export default function Header() {
               {d.label}
             </Link>
           ))}
-          <span className="text-ink-secondary font-medium mt-2">Services</span>
+          <span className="text-white/50 font-medium mt-2">Services</span>
           {SERVICES.map((s) => (
             <Link key={s.href} href={s.href} className="pl-3" onClick={() => setMobileOpen(false)}>
               {s.label}
@@ -146,7 +154,7 @@ export default function Header() {
           </Link>
           <Link
             href="/contact"
-            className="bg-graphite text-white px-4 py-2 rounded-sm text-center mt-2"
+            className="bg-clay text-white px-4 py-2 rounded-sm text-center mt-2"
             onClick={() => setMobileOpen(false)}
           >
             Contact
